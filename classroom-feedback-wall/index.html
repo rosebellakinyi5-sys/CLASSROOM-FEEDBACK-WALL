@@ -39,31 +39,39 @@
       </div>
 
       <div id="form-workspace" class="form-workspace">
-        <form id ="feedback-form">
-          <label for="student-name">Student Name:</label>
-          <input type="text" id="student-name" required><br>
+        <form id="feedback-form">
+          <div class="form-group">
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name" required>
+          </div>
 
-          <label for="feedback-message">Feedback Message:</label>
-          <textarea placeholder="Enter Feedback message" id="feedback-message"></textarea><br>
+          <div class="form-group">
+            <label for="feedback-message">Feedback Message:</label>
+            <textarea id="feedback-message" placeholder="Enter feedback message"></textarea>
+          </div>
 
-          <select id="mood">
-            <option value="Positive">Positive Feedback</option>
-            <option value="neutral">Neutral Feedback</option>
-            <option value="needs-improvement">Needs-improvement</option>
-          </select><br>
+          <div class="form-group">
+            <label for="mood">Mood:</label>
+            <select id="mood">
+              <option value="positive">Positive Feedback</option>
+              <option value="neutral">Neutral Feedback</option>
+              <option value="needs-improvement">Needs Improvement</option>
+            </select>
+          </div>
 
-          <label for="anonymous">Anonymous</label>
-          <input type="checkbox" id="anonymous"><br>
+          <div class="checkbox-group">
+            <input type="checkbox" id="anonymous">
+            <label for="anonymous">Post as Anonymous</label>
+          </div>
 
-          <p id="form-message"></p>
+          <p id="form-message" class="form-message"></p>
+
           <div class="button-row">
-            <button type="submit">Post Feedback</button>  
-            <button type="button" id="show-positive">Show positive</button>
+            <button type="submit">Post Feedback</button>
+            <button type="button" id="show-positive">Show Positive</button>
             <button type="button" id="clear-feedback">Clear Feedback</button>
           </div>
-          
         </form>
-        <p class="placeholder-message">Your feedback form will appear here.</p>
       </div>
     </section>
 
