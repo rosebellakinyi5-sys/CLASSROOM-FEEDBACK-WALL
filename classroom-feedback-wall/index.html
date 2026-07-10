@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Feedback Wall</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">DOM, Events, Testing & Forms</p>
+      <h1>Classroom Feedback Wall</h1>
+      <p>Create a form and use JavaScript to turn student feedback into colourful cards.</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="panel instructions" aria-labelledby="instructions-title">
+      <h2 id="instructions-title">Your challenge</h2>
+      <p>Build a feedback form in the workspace and implement the behaviour in <code>script.js</code>.</p>
+      <ul>
+        <li>Post feedback as a card.</li>
+        <li>Display “Anonymous” when the anonymous checkbox is selected.</li>
+        <li>Style cards according to the selected mood.</li>
+        <li>Show positive feedback only when the filter button is clicked.</li>
+        <li>Clear the entire wall with one button.</li>
+      </ul>
+    </section>
+
+    <section class="panel" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Student work area</p>
+          <h2 id="form-title">Create your form here</h2>
+        </div>
+        <span class="status-badge">HTML task</span>
+      </div>
+
+      <div id="form-workspace" class="form-workspace">
+        <form id ="feedback-form">
+          <label for="student-name">Student Name:</label>
+          <input type="text" id="student-name" required><br>
+
+          <label for="feedback-message">Feedback Message:</label>
+          <textarea placeholder="Enter Feedback message" id="feedback-message"></textarea><br>
+
+          <select id="mood">
+            <option value="Positive">Positive Feedback</option>
+            <option value="neutral">Neutral Feedback</option>
+            <option value="needs-improvement">Needs-improvement</option>
+          </select><br>
+
+          <label for="anonymous">Anonymous</label>
+          <input type="checkbox" id="anonymous"><br>
+
+          <p id="form-message"></p>
+          <div class="button-row">
+            <button type="submit">Post Feedback</button>  
+            <button type="button" id="show-positive">Show positive</button>
+            <button type="button" id="clear-feedback">Clear Feedback</button>
+          </div>
+          
+        </form>
+        <p class="placeholder-message">Your feedback form will appear here.</p>
+      </div>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Feedback summary">
+      <article class="summary-card">
+        <span class="summary-card__label">Posts displayed</span>
+        <strong id="feedback-count" class="summary-card__value">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-card__label">Current view</span>
+        <strong id="current-view" class="summary-card__value summary-card__value--small">All feedback</strong>
+      </article>
+    </section>
+
+    <section class="panel wall-panel" aria-labelledby="results-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DOM output</p>
+          <h2 id="results-title">Feedback wall</h2>
+        </div>
+      </div>
+      <div id="feedback-list" class="feedback-grid" aria-live="polite">
+        <p id="empty-state" class="empty-state">No feedback has been posted yet.</p>
+      </div>
+    </section>
+
+    <section class="panel testing-panel" aria-labelledby="testing-title">
+      <h2 id="testing-title">DOM testing checklist</h2>
+      <ol>
+        <li>A valid submission creates one feedback card.</li>
+        <li>An empty feedback message displays an error.</li>
+        <li>Anonymous submissions do not display the entered name.</li>
+        <li>Each mood adds the correct CSS class.</li>
+        <li>The clear button removes every feedback card.</li>
+      </ol>
+      <p>Open <code>tests.js</code> for beginner-friendly test prompts.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Beginner JavaScript Practice Project</p>
+  </footer>
+</body>
+</html>
