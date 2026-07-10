@@ -43,27 +43,7 @@ feedbackForm.addEventListener("submit", function (e) {
   renderFeedback();
 });
 
-function renderFeedback() {
-  feedbackListEl.innerHTML = "";
 
-  let postsToShow = feedbackList;
-  if (currentView === "positive") {
-    postsToShow = feedbackList.filter(function (post) {
-      return post.mood === "positive";
-    });
-  }
-
-  if (postsToShow.length === 0) {
-    feedbackListEl.appendChild(emptyState);
-  } else {
-    postsToShow.forEach(function (post) {
-      feedbackListEl.appendChild(createFeedbackCard(post));
-    });
-  }
-
-  feedbackCount.textContent = postsToShow.length;
-  currentViewLabel.textContent = currentView === "positive" ? "Positive only" : "All feedback";
-}
 
 function createFeedbackCard(post) {
   const card = document.createElement("article");
@@ -86,20 +66,6 @@ function createFeedbackCard(post) {
   return card;
 }
 
-showPositiveBtn.addEventListener("click", function () {
-  currentView = currentView === "positive" ? "all" : "positive";
-  showPositiveBtn.textContent = currentView === "positive" ? "Show All" : "Show Positive";
-  renderFeedback();
-});
-
-clearFeedbackBtn.addEventListener("click", function () {
-  feedbackList = [];
-  currentView = "all";
-  showPositiveBtn.textContent = "Show Positive";
-  renderFeedback();
-});
-
-renderFeedback();
 
 /*
   CLASSROOM FEEDBACK WALL
